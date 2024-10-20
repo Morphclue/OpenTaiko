@@ -790,7 +790,7 @@ namespace OpenTaiko {
 
 					//this.PuchiChara.On進行描画(ttps, 562, false, 255, false, p);
 
-					this.PuchiChara.On進行描画(puchi_x, puchi_y, false, 255, false, p);
+					this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false, 255, false, p);
 
 					#endregion
 

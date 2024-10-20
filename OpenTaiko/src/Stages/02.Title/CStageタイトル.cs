@@ -525,7 +525,7 @@ namespace OpenTaiko {
 
 
 					//this.PuchiChara.On進行描画(485 + 100, 140 + 190, false, alpha);
-					this.PuchiChara.On進行描画(puchi_x, puchi_y, false, alpha);
+					this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false, alpha);
 
 					OpenTaiko.Tx.Entry_Player[2].Opacity = ctエントリーバー決定点滅.CurrentValue >= 800 ? 255 - (ctエントリーバー決定点滅.CurrentValue - 800) : (this.ctSaveLoaded.CurrentValue - 3400) - (this.ctエントリーバー点滅.CurrentValue <= 255 ? this.ctエントリーバー点滅.CurrentValue : 255 - (this.ctエントリーバー点滅.CurrentValue - 255));
 					OpenTaiko.Tx.Entry_Player[2].t2D描画(OpenTaiko.Skin.Title_Entry_Player_Select_X[n現在の選択行プレイヤーエントリー], OpenTaiko.Skin.Title_Entry_Player_Select_Y[n現在の選択行プレイヤーエントリー],
@@ -613,7 +613,7 @@ namespace OpenTaiko {
 						//int puchi_x = TJAPlayer3.Skin.Characters_Menu_X[_charaId][player] + TJAPlayer3.Skin.Adjustments_MenuPuchichara_X[player];
 						//int puchi_y = TJAPlayer3.Skin.Characters_Menu_Y[_charaId][player] + TJAPlayer3.Skin.Adjustments_MenuPuchichara_Y[player];
 
-						this.PuchiChara.On進行描画(puchi_x, puchi_y, false, player: player);
+						this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false, player: player);
 					}
 
 					#endregion

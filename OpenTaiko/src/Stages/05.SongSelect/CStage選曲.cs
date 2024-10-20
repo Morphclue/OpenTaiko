@@ -568,7 +568,7 @@ namespace OpenTaiko {
 					if (___cc != null && ___cc.IsUnEnded) {
 						CMenuCharacter.tMenuDisplayCharacter(player, chara_x, chara_y, CMenuCharacter.ECharacterAnimation.SELECT);
 
-						this.PuchiChara.On進行描画(puchi_x, puchi_y, false, 255, false, player);
+						this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false, 255, false, player);
 					} else {
 						CCounter ___cj = CMenuCharacter._getReferenceCounter(CMenuCharacter.ECharacterAnimation.START)[player];
 
@@ -576,15 +576,15 @@ namespace OpenTaiko {
 						if (___cj != null && ___cj.EndValue > 0) {
 							CMenuCharacter.tMenuDisplayCharacter(player, chara_x, chara_y, CMenuCharacter.ECharacterAnimation.START);
 
-							this.PuchiChara.On進行描画(puchi_x, puchi_y, false, 255, false, player);
+							this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false, 255, false, player);
 						} else if (actDifficultySelectionScreen.bIsDifficltSelect && actDifficultySelectionScreen.bSelect[player]) {
 							CMenuCharacter.tMenuDisplayCharacter(player, chara_x, chara_y, CMenuCharacter.ECharacterAnimation.WAIT);
 
-							this.PuchiChara.On進行描画(puchi_x, puchi_y, false, 255, false, player);
+							this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false, 255, false, player);
 						} else {
 							CMenuCharacter.tMenuDisplayCharacter(player, chara_x, chara_y, CMenuCharacter.ECharacterAnimation.NORMAL);
 
-							this.PuchiChara.On進行描画(puchi_x, puchi_y, false, 255, false, player);
+							this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false, 255, false, player);
 						}
 					}
 				}

@@ -239,7 +239,7 @@ namespace OpenTaiko {
 					int puchi_y = chara_y + OpenTaiko.Skin.Adjustments_MenuPuchichara_Y[0];
 
 					//this.PuchiChara.On進行描画(0 + 100, 336 + 230, false);
-					this.PuchiChara.On進行描画(puchi_x, puchi_y, false);
+					this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false);
 
 					#endregion
 				}

@@ -443,11 +443,11 @@ namespace OpenTaiko {
 
 				if ((this.b風船連打中[i] != true && CharaAction_Balloon_Delay[i].IsEnded) || OpenTaiko.ConfigIni.nPlayerCount > 2) {
 					if (OpenTaiko.ConfigIni.nPlayerCount <= 2) {
-						OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(OpenTaiko.Skin.Game_PuchiChara_X[i], OpenTaiko.Skin.Game_PuchiChara_Y[i], OpenTaiko.stage演奏ドラム画面.bIsAlreadyMaxed[i], player: i);
+						OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(OpenTaiko.Skin.Game_PuchiChara_X[i], OpenTaiko.Skin.Game_PuchiChara_Y[i], OpenTaiko.stage演奏ドラム画面.bIsAlreadyMaxed[i], player: i);
 					} else if (OpenTaiko.ConfigIni.nPlayerCount == 5) {
-						OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(OpenTaiko.Skin.Game_PuchiChara_5P[0] + (OpenTaiko.Skin.Game_UIMove_5P[0] * i), OpenTaiko.Skin.Game_PuchiChara_5P[1] + (OpenTaiko.Skin.Game_UIMove_5P[1] * i), OpenTaiko.stage演奏ドラム画面.bIsAlreadyMaxed[i], player: i, scale: 0.5f);
+						OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(OpenTaiko.Skin.Game_PuchiChara_5P[0] + (OpenTaiko.Skin.Game_UIMove_5P[0] * i), OpenTaiko.Skin.Game_PuchiChara_5P[1] + (OpenTaiko.Skin.Game_UIMove_5P[1] * i), OpenTaiko.stage演奏ドラム画面.bIsAlreadyMaxed[i], player: i, scale: 0.5f);
 					} else {
-						OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(OpenTaiko.Skin.Game_PuchiChara_4P[0] + (OpenTaiko.Skin.Game_UIMove_4P[0] * i), OpenTaiko.Skin.Game_PuchiChara_4P[1] + (OpenTaiko.Skin.Game_UIMove_4P[1] * i), OpenTaiko.stage演奏ドラム画面.bIsAlreadyMaxed[i], player: i, scale: 0.5f);
+						OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(OpenTaiko.Skin.Game_PuchiChara_4P[0] + (OpenTaiko.Skin.Game_UIMove_4P[0] * i), OpenTaiko.Skin.Game_PuchiChara_4P[1] + (OpenTaiko.Skin.Game_UIMove_4P[1] * i), OpenTaiko.stage演奏ドラム画面.bIsAlreadyMaxed[i], player: i, scale: 0.5f);
 					}
 				}
 			}
@@ -508,7 +508,7 @@ namespace OpenTaiko {
 						}
 
 						if (OpenTaiko.ConfigIni.nPlayerCount <= 2)
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.stage演奏ドラム画面.GetJPOSCROLLX(i) + OpenTaiko.Skin.Game_PuchiChara_BalloonX[i],
 								OpenTaiko.stage演奏ドラム画面.GetJPOSCROLLY(i) + OpenTaiko.Skin.Game_PuchiChara_BalloonY[i], false, nowOpacity, true, player: i);
 
@@ -530,7 +530,7 @@ namespace OpenTaiko {
 						}
 
 						if (OpenTaiko.ConfigIni.nPlayerCount <= 2)
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.stage演奏ドラム画面.GetJPOSCROLLX(i) + OpenTaiko.Skin.Game_PuchiChara_BalloonX[i],
 								OpenTaiko.stage演奏ドラム画面.GetJPOSCROLLY(i) + OpenTaiko.Skin.Game_PuchiChara_BalloonY[i], false, nowOpacity, true, player: i);
 
@@ -547,7 +547,7 @@ namespace OpenTaiko {
 						}
 
 						if (OpenTaiko.ConfigIni.nPlayerCount <= 2)
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.stage演奏ドラム画面.GetJPOSCROLLX(i) + OpenTaiko.Skin.Game_PuchiChara_BalloonX[i],
 								OpenTaiko.stage演奏ドラム画面.GetJPOSCROLLY(i) + OpenTaiko.Skin.Game_PuchiChara_BalloonY[i], false, 255, true, player: i);
 					} else if (eNowAnime[i] == Anime.Kusudama_Broke) {
@@ -568,11 +568,11 @@ namespace OpenTaiko {
 							}
 						}
 						if (i % 2 == 0) {
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaX[i] - (int)kusuOutX,
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaY[i] - (int)kusuOutY, false, nowOpacity, true, player: i);
 						} else {
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaX[i] + (int)kusuOutX,
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaY[i] - (int)kusuOutY, false, nowOpacity, true, player: i);
 						}
@@ -600,7 +600,7 @@ namespace OpenTaiko {
 							}
 						}
 
-						OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+						OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 							OpenTaiko.Skin.Game_PuchiChara_KusudamaX[i],
 							OpenTaiko.Skin.Game_PuchiChara_KusudamaY[i] + (int)kusuOutY, false, nowOpacity, true, player: i);
 
@@ -623,11 +623,11 @@ namespace OpenTaiko {
 						}
 
 						if (i % 2 == 0) {
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaX[i] - (int)kusuInX,
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaY[i] + (int)kusuInY, false, 255, true, player: i);
 						} else {
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaX[i] + (int)kusuInX,
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaY[i] + (int)kusuInY, false, 255, true, player: i);
 						}
@@ -650,11 +650,11 @@ namespace OpenTaiko {
 						}
 
 						if (i % 2 == 0) {
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaX[i] - (int)kusuInX,
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaY[i] + (int)kusuInY, false, 255, true, player: i);
 						} else {
-							OpenTaiko.stage演奏ドラム画面.PuchiChara.On進行描画(
+							OpenTaiko.stage演奏ドラム画面.PuchiChara.OnRenderProgress(
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaX[i] + (int)kusuInX,
 								OpenTaiko.Skin.Game_PuchiChara_KusudamaY[i] + (int)kusuInY, false, 255, true, player: i);
 						}

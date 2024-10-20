@@ -505,7 +505,7 @@ namespace OpenTaiko {
 
 				#region [PuchiChara]
 
-				this.PuchiChara.On進行描画(puchi_x, puchi_y, false);
+				this.PuchiChara.OnRenderProgress(puchi_x, puchi_y, false);
 
 				#endregion
 			}

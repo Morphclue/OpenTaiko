@@ -49,7 +49,7 @@ namespace OpenTaiko {
 		/// <param name="y">Y coordinate (center)</param>
 		/// <param name="alpha">Opacity (0-255)</param>
 		/// <returns></returns>
-		public int On進行描画(int x, int y, bool isGrowing, int alpha = 255, bool isBalloon = false, int player = 0, float scale = 1.0f) {
+		public int OnRenderProgress(int x, int y, bool isGrowing, int alpha = 255, bool isBalloon = false, int player = 0, float scale = 1.0f) {
 			if (!OpenTaiko.ConfigIni.ShowPuchiChara) return base.Draw();
 			if (Counter == null || SineCounter == null || OpenTaiko.Tx.Puchichara == null) return base.Draw();
 			Counter.TickLoop();
