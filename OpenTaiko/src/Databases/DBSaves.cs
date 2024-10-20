@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace OpenTaiko {
 	internal class DBSaves {
 		private static string _savesDBFilename = $@"Saves.db3";
-		private static string _savesDBPath = @$"{OpenTaiko.strEXEのあるフォルダ}{_savesDBFilename}";
+		private static string _savesDBPath = @$"{OpenTaiko.strEXEFolder}{_savesDBFilename}";
 		private static SqliteConnection SavesDBConnection = new SqliteConnection(@$"Data Source={_savesDBPath}");
 
 		private static string _DBNotFoundError = @$"The database {_savesDBFilename} was not found or the connection failed";

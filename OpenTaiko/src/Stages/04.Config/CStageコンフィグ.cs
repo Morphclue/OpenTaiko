@@ -85,7 +85,7 @@ namespace OpenTaiko {
 			try {
 				OpenTaiko.Skin.bgmコンフィグ画面.tStop();
 
-				OpenTaiko.ConfigIni.t書き出し(OpenTaiko.strEXEのあるフォルダ + "Config.ini");    // CONFIGだけ
+				OpenTaiko.ConfigIni.WriteToFile(OpenTaiko.strEXEFolder + "Config.ini");    // CONFIGだけ
 				for (int i = 0; i < 4; i++) {
 					this.ctキー反復用[i] = null;
 				}

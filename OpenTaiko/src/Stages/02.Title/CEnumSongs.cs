@@ -56,8 +56,8 @@ namespace OpenTaiko {
 				this.thDTXFileEnumerate.Priority = tp;
 			}
 		}
-		private readonly string strPathSongsDB = OpenTaiko.strEXEのあるフォルダ + "songs.db";
-		private readonly string strPathSongList = OpenTaiko.strEXEのあるフォルダ + "songlist.db";
+		private readonly string strPathSongsDB = OpenTaiko.strEXEFolder + "songs.db";
+		private readonly string strPathSongList = OpenTaiko.strEXEFolder + "songlist.db";
 
 		public Thread thDTXFileEnumerate {
 			get;
@@ -274,8 +274,8 @@ namespace OpenTaiko {
 
 			try {
 				if (hard_reload) {
-					if (File.Exists($"{OpenTaiko.strEXEのあるフォルダ}songlist.db"))
-						File.Delete($"{OpenTaiko.strEXEのあるフォルダ}songlist.db");
+					if (File.Exists($"{OpenTaiko.strEXEFolder}songlist.db"))
+						File.Delete($"{OpenTaiko.strEXEFolder}songlist.db");
 				}
 				Deserialize();
 
@@ -295,7 +295,7 @@ namespace OpenTaiko {
 							foreach (string str in strArray) {
 								string path = str;
 								if (!Path.IsPathRooted(path)) {
-									path = OpenTaiko.strEXEのあるフォルダ + str;  // 相対パスの場合、絶対パスに直す(2010.9.16)
+									path = OpenTaiko.strEXEFolder + str;  // 相対パスの場合、絶対パスに直す(2010.9.16)
 								}
 
 								if (!string.IsNullOrEmpty(path)) {
@@ -411,7 +411,7 @@ namespace OpenTaiko {
 		/// </summary>
 		private void SerializeSongList() {
 			BinaryFormatter songlistdb_ = new BinaryFormatter();
-			using Stream songlistdb = File.OpenWrite($"{OpenTaiko.strEXEのあるフォルダ}songlist.db");
+			using Stream songlistdb = File.OpenWrite($"{OpenTaiko.strEXEFolder}songlist.db");
 			songlistdb_.Serialize(songlistdb, Songs管理.listSongsDB);
 		}
 
@@ -422,9 +422,9 @@ namespace OpenTaiko {
 		/// <param name="strPathSongList"></param>
 		public void Deserialize() {
 			try {
-				if (File.Exists($"{OpenTaiko.strEXEのあるフォルダ}songlist.db")) {
+				if (File.Exists($"{OpenTaiko.strEXEFolder}songlist.db")) {
 					BinaryFormatter songlistdb_ = new BinaryFormatter();
-					using Stream songlistdb = File.OpenRead($"{OpenTaiko.strEXEのあるフォルダ}songlist.db");
+					using Stream songlistdb = File.OpenRead($"{OpenTaiko.strEXEFolder}songlist.db");
 					this.Songs管理.listSongsDB = (Dictionary<string, CSongListNode>)songlistdb_.Deserialize(songlistdb);
 				}
 			} catch (Exception exception) {

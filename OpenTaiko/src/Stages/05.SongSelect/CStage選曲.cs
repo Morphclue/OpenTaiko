@@ -228,7 +228,7 @@ namespace OpenTaiko {
 					foreach (OpenTaiko.STPlugin stPlugin in OpenTaiko.app.PluginList) {
 						Directory.SetCurrentDirectory(stPlugin.pluginDirectory);
 						stPlugin.plugin.On選択曲変更(str選択曲ファイル名, n曲番号inブロック);
-						Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+						Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 					}
 				}
 			}

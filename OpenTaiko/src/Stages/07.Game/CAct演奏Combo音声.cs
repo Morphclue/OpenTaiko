@@ -60,7 +60,7 @@ namespace OpenTaiko {
 
 				int _charaId = OpenTaiko.SaveFileInstances[OpenTaiko.GetActualPlayer(i)].data.Character;
 
-				var currentDir = ($@"{OpenTaiko.strEXEのあるフォルダ}Global{Path.DirectorySeparatorChar}Characters{Path.DirectorySeparatorChar}{OpenTaiko.Skin.Characters_DirName[_charaId]}{Path.DirectorySeparatorChar}Sounds{Path.DirectorySeparatorChar}Combo{Path.DirectorySeparatorChar}");
+				var currentDir = ($@"{OpenTaiko.strEXEFolder}Global{Path.DirectorySeparatorChar}Characters{Path.DirectorySeparatorChar}{OpenTaiko.Skin.Characters_DirName[_charaId]}{Path.DirectorySeparatorChar}Sounds{Path.DirectorySeparatorChar}Combo{Path.DirectorySeparatorChar}");
 				if (Directory.Exists(currentDir)) {
 					foreach (var item in Directory.GetFiles(currentDir)) {
 						var comboVoice = new CComboVoice();
@@ -90,7 +90,7 @@ namespace OpenTaiko {
 
 				#region [Floor voices]
 
-				currentDir = ($@"{OpenTaiko.strEXEのあるフォルダ}Global\Characters\{OpenTaiko.Skin.Characters_DirName[_charaId]}\Sounds\Tower_Combo\");
+				currentDir = ($@"{OpenTaiko.strEXEFolder}Global\Characters\{OpenTaiko.Skin.Characters_DirName[_charaId]}\Sounds\Tower_Combo\");
 				if (Directory.Exists(currentDir)) {
 					foreach (var item in Directory.GetFiles(currentDir)) {
 						var comboVoice = new CComboVoice();

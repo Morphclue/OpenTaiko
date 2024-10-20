@@ -5,7 +5,7 @@ using static OpenTaiko.DBNameplateUnlockables;
 namespace OpenTaiko {
 	internal class DBNameplateUnlockables : CSavableT<Dictionary<Int64, NameplateUnlockable>> {
 		public DBNameplateUnlockables() {
-			_fn = @$"{OpenTaiko.strEXEのあるフォルダ}Databases{Path.DirectorySeparatorChar}NameplateUnlockables.db3";
+			_fn = @$"{OpenTaiko.strEXEFolder}Databases{Path.DirectorySeparatorChar}NameplateUnlockables.db3";
 
 			using (var connection = new SqliteConnection(@$"Data Source={_fn}")) {
 				connection.Open();

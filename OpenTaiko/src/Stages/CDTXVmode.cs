@@ -317,13 +317,13 @@ namespace OpenTaiko {
 		/// </summary>
 		public void tUpdateConfigIni() {
 			CConfigIni cc = new CConfigIni();
-			string path = OpenTaiko.strEXEのあるフォルダ + "Config.ini";
+			string path = OpenTaiko.strEXEFolder + "Config.ini";
 			if (File.Exists(path)) {
 				FileInfo fi = new FileInfo(path);
 				if (fi.Length > 0)  // Config.iniが0byteだったなら、読み込まない
 				{
 					try {
-						cc.tファイルから読み込み(path);
+						cc.LoadFromFile(path);
 					} catch (Exception e) {
 						//ConfigIni = new CConfigIni();	// 存在してなければ新規生成
 						Trace.TraceError(e.ToString());
@@ -339,7 +339,7 @@ namespace OpenTaiko {
 			cc.bViewerTimeStretch = OpenTaiko.ConfigIni.bTimeStretch;
 			cc.bViewerDrums有効 = true;
 
-			cc.t書き出し(path);
+			cc.WriteToFile(path);
 		}
 
 		private string last_path;

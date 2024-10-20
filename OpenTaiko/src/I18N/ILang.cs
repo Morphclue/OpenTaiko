@@ -29,8 +29,8 @@
 		public static string[] Langcodes {
 			get {
 				if (_langCodes == null)
-					_langCodes = Directory.GetDirectories(Path.Combine(OpenTaiko.strEXEのあるフォルダ, "Lang"), "*", SearchOption.TopDirectoryOnly)
-					.Select(result => Path.GetRelativePath(Path.Combine(OpenTaiko.strEXEのあるフォルダ, "Lang"), result))
+					_langCodes = Directory.GetDirectories(Path.Combine(OpenTaiko.strEXEFolder, "Lang"), "*", SearchOption.TopDirectoryOnly)
+					.Select(result => Path.GetRelativePath(Path.Combine(OpenTaiko.strEXEFolder, "Lang"), result))
 					.ToArray();
 
 				return _langCodes;

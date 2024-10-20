@@ -40,7 +40,7 @@ namespace OpenTaiko {
 
 		private string _GetSectionContents(int key, bool _fetchingMenus) {
 			try {
-				string _path = _GetPathTextFile(@$"{OpenTaiko.strEXEのあるフォルダ}Encyclopedia{Path.DirectorySeparatorChar}" + (_fetchingMenus ? @$"Menus{Path.DirectorySeparatorChar}" : @$"Pages{Path.DirectorySeparatorChar}") + key.ToString());
+				string _path = _GetPathTextFile(@$"{OpenTaiko.strEXEFolder}Encyclopedia{Path.DirectorySeparatorChar}" + (_fetchingMenus ? @$"Menus{Path.DirectorySeparatorChar}" : @$"Pages{Path.DirectorySeparatorChar}") + key.ToString());
 
 				return File.ReadAllText(_path);
 			} catch {
@@ -49,7 +49,7 @@ namespace OpenTaiko {
 		}
 
 		private string _GetImagePath(int key) {
-			return @$"{OpenTaiko.strEXEのあるフォルダ}Encyclopedia{Path.DirectorySeparatorChar}Images{Path.DirectorySeparatorChar}" + key.ToString() + @".png";
+			return @$"{OpenTaiko.strEXEFolder}Encyclopedia{Path.DirectorySeparatorChar}Images{Path.DirectorySeparatorChar}" + key.ToString() + @".png";
 		}
 
 		#endregion

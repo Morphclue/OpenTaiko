@@ -621,7 +621,7 @@ namespace OpenTaiko {
 			PrepareReloadSkin();
 		}
 		private string InitializeSkinPathRoot() {
-			strSystemSkinRoot = System.IO.Path.Combine(OpenTaiko.strEXEのあるフォルダ, "System" + System.IO.Path.DirectorySeparatorChar);
+			strSystemSkinRoot = System.IO.Path.Combine(OpenTaiko.strEXEFolder, "System" + System.IO.Path.DirectorySeparatorChar);
 			return strSystemSkinRoot;
 		}
 
@@ -1015,7 +1015,7 @@ namespace OpenTaiko {
 									}
 
 								case "DiffDispMode": {
-										this.eDiffDispMode = (EDifficultyDisplayType)CConversion.n値を文字列から取得して範囲内に丸めて返す(strParam, 0, 2, (int)this.eDiffDispMode);
+										this.eDiffDispMode = (EDifficultyDisplayType)CConversion.ParseRoundedValueInRange(strParam, 0, 2, (int)this.eDiffDispMode);
 										break;
 									}
 								case "NowStageDisp": {

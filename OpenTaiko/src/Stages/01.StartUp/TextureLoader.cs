@@ -80,7 +80,7 @@ namespace OpenTaiko {
 		}
 
 		internal CTexture TxCGlobal(string FileName) {
-			var tex = OpenTaiko.tテクスチャの生成(OpenTaiko.strEXEのあるフォルダ + GLOBAL + FileName, false);
+			var tex = OpenTaiko.tテクスチャの生成(OpenTaiko.strEXEFolder + GLOBAL + FileName, false);
 			listTexture.Add(tex);
 			return tex;
 		}
@@ -749,7 +749,7 @@ namespace OpenTaiko {
 
 			#region PuchiChara
 
-			var puchicharaDirs = System.IO.Directory.GetDirectories(OpenTaiko.strEXEのあるフォルダ + GLOBAL + PUCHICHARA);
+			var puchicharaDirs = System.IO.Directory.GetDirectories(OpenTaiko.strEXEFolder + GLOBAL + PUCHICHARA);
 			OpenTaiko.Skin.Puchichara_Ptn = puchicharaDirs.Length;
 
 			Puchichara = new CPuchichara[OpenTaiko.Skin.Puchichara_Ptn];
@@ -1049,7 +1049,7 @@ namespace OpenTaiko {
 
 			#region [Character count initialisations]
 
-			var charaDirs = System.IO.Directory.GetDirectories(OpenTaiko.strEXEのあるフォルダ + GLOBAL + CHARACTERS);
+			var charaDirs = System.IO.Directory.GetDirectories(OpenTaiko.strEXEFolder + GLOBAL + CHARACTERS);
 			OpenTaiko.Skin.Characters_Ptn = charaDirs.Length;
 
 			Characters_Heya_Preview = new CTexture[OpenTaiko.Skin.Characters_Ptn];
@@ -1500,7 +1500,7 @@ namespace OpenTaiko {
 				#endregion
 			}
 
-			string charaPath = OpenTaiko.strEXEのあるフォルダ + GLOBAL + CHARACTERS + OpenTaiko.Skin.Characters_DirName[newC];
+			string charaPath = OpenTaiko.strEXEFolder + GLOBAL + CHARACTERS + OpenTaiko.Skin.Characters_DirName[newC];
 
 			if ((newC >= 0 &&
 				OpenTaiko.SaveFileInstances[0].data.Character != newC &&

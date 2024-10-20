@@ -1385,7 +1385,7 @@ namespace OpenTaiko {
 					&& OpenTaiko.ConfigIni.bIsAutoResultCapture)                                               // #25399 2011.6.9 yyagi
 				{
 					string strFullPath =
-							   Path.Combine(OpenTaiko.strEXEのあるフォルダ, "Capture_img");
+							   Path.Combine(OpenTaiko.strEXEFolder, "Capture_img");
 					strFullPath = Path.Combine(strFullPath, DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
 					OpenTaiko.app.SaveResultScreen(strFullPath);
 

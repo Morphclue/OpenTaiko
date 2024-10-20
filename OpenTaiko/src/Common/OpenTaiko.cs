@@ -362,7 +362,7 @@ namespace OpenTaiko {
 		}
 		public static CStage r現在のステージ = null;
 		public static CStage r直前のステージ = null;
-		public static string strEXEのあるフォルダ {
+		public static string strEXEFolder {
 			get;
 			private set;
 		}
@@ -498,18 +498,18 @@ namespace OpenTaiko {
 		protected override void Configuration() {
 			#region [ strEXEのあるフォルダを決定する ]
 			//-----------------
-			strEXEのあるフォルダ = Environment.CurrentDirectory + Path.DirectorySeparatorChar;
+			strEXEFolder = Environment.CurrentDirectory + Path.DirectorySeparatorChar;
 			// END #23629 2010.11.13 from
 			//-----------------
 			#endregion
 
 			ConfigIni = new CConfigIni();
 
-			string path = strEXEのあるフォルダ + "Config.ini";
+			string path = strEXEFolder + "Config.ini";
 			if (File.Exists(path)) {
 				try {
 					// Load config info
-					ConfigIni.tファイルから読み込み(path);
+					ConfigIni.LoadFromFile(path);
 				} catch (Exception e) {
 					Trace.TraceError(e.ToString());
 					Trace.TraceError("例外が発生しましたが処理を継続します。 (b8d93255-bbe4-4ca3-8264-7ee5175b19f3)");
@@ -563,7 +563,7 @@ namespace OpenTaiko {
 			foreach (STPlugin st in this.PluginList) {
 				Directory.SetCurrentDirectory(st.pluginDirectory);
 				st.plugin.OnUnmanagedリソースの作成();
-				Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+				Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 			}
 		}
 		protected override void UnloadContent() {
@@ -575,7 +575,7 @@ namespace OpenTaiko {
 			foreach (STPlugin st in this.PluginList) {
 				Directory.SetCurrentDirectory(st.pluginDirectory);
 				st.plugin.OnUnmanagedリソースの解放();
-				Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+				Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 			}
 		}
 		protected override void OnExiting() {
@@ -626,7 +626,7 @@ namespace OpenTaiko {
 						else
 							sp.plugin.On進行描画(null, null);
 
-						Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+						Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 					}
 					//---------------------
 					#endregion
@@ -755,7 +755,7 @@ namespace OpenTaiko {
 								foreach (STPlugin pg in this.PluginList) {
 									Directory.SetCurrentDirectory(pg.pluginDirectory);
 									pg.plugin.Onステージ変更();
-									Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+									Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 								}
 
 								this.tガベージコレクションを実行する();
@@ -971,7 +971,7 @@ namespace OpenTaiko {
 							foreach (STPlugin pg in this.PluginList) {
 								Directory.SetCurrentDirectory(pg.pluginDirectory);
 								pg.plugin.Onステージ変更();
-								Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+								Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 							}
 
 							//-----------------------------
@@ -1005,7 +1005,7 @@ namespace OpenTaiko {
 										foreach (STPlugin pg in this.PluginList) {
 											Directory.SetCurrentDirectory(pg.pluginDirectory);
 											pg.plugin.Onステージ変更();
-											Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+											Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 										}
 
 										this.tガベージコレクションを実行する();
@@ -1034,7 +1034,7 @@ namespace OpenTaiko {
 										foreach (STPlugin pg in this.PluginList) {
 											Directory.SetCurrentDirectory(pg.pluginDirectory);
 											pg.plugin.Onステージ変更();
-											Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+											Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 										}
 
 										this.tガベージコレクションを実行する();
@@ -1085,7 +1085,7 @@ namespace OpenTaiko {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1121,7 +1121,7 @@ namespace OpenTaiko {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1175,7 +1175,7 @@ namespace OpenTaiko {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1236,7 +1236,7 @@ namespace OpenTaiko {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1266,7 +1266,7 @@ namespace OpenTaiko {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1304,7 +1304,7 @@ namespace OpenTaiko {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1371,7 +1371,7 @@ namespace OpenTaiko {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									break;
@@ -1397,7 +1397,7 @@ for (int i = 0; i < 3; i++) {
 								foreach (STPlugin pg in this.PluginList) {
 									Directory.SetCurrentDirectory(pg.pluginDirectory);
 									pg.plugin.Onステージ変更();
-									Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+									Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 								}
 
 								this.tガベージコレクションを実行する();
@@ -1508,7 +1508,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.On演奏キャンセル(scoreIni);
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 									//---------------------
 									#endregion
@@ -1561,7 +1561,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 									//---------------------
 									#endregion
@@ -1581,7 +1581,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.On演奏失敗(scoreIni);
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 									//---------------------
 									#endregion
@@ -1611,7 +1611,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 									//---------------------
 									#endregion
@@ -1635,7 +1635,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.On演奏クリア(scoreIni);
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 									//---------------------
 									#endregion
@@ -1661,7 +1661,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 									//---------------------
 									#endregion
@@ -1729,7 +1729,7 @@ for (int i = 0; i < 3; i++) {
 								foreach (STPlugin pg in this.PluginList) {
 									Directory.SetCurrentDirectory(pg.pluginDirectory);
 									pg.plugin.Onステージ変更();
-									Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+									Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 								}
 
 								this.tガベージコレクションを実行する();
@@ -1766,7 +1766,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1796,7 +1796,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1869,7 +1869,7 @@ for (int i = 0; i < 3; i++) {
 									foreach (STPlugin pg in this.PluginList) {
 										Directory.SetCurrentDirectory(pg.pluginDirectory);
 										pg.plugin.Onステージ変更();
-										Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+										Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 									}
 
 									this.tガベージコレクションを実行する();
@@ -1945,7 +1945,7 @@ for (int i = 0; i < 3; i++) {
 					} else {
 						// Debug.WriteLine( "capture: " + string.Format( "{0:2x}", (int) e.KeyCode ) + " " + (int) e.KeyCode );
 						string strFullPath =
-						   Path.Combine(OpenTaiko.strEXEのあるフォルダ, "Capture_img");
+						   Path.Combine(OpenTaiko.strEXEFolder, "Capture_img");
 						strFullPath = Path.Combine(strFullPath, DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
 						SaveResultScreen(strFullPath);
 					}
@@ -2201,7 +2201,7 @@ for (int i = 0; i < 3; i++) {
 			Trace.AutoFlush = true;
 			if (ConfigIni.bOutputLogs) {
 				try {
-					Trace.Listeners.Add(new CTraceLogListener(new StreamWriter(System.IO.Path.Combine(strEXEのあるフォルダ, "OpenTaiko.log"), false, Encoding.GetEncoding(OpenTaiko.sEncType))));
+					Trace.Listeners.Add(new CTraceLogListener(new StreamWriter(System.IO.Path.Combine(strEXEFolder, "OpenTaiko.log"), false, Encoding.GetEncoding(OpenTaiko.sEncType))));
 				} catch (System.UnauthorizedAccessException)            // #24481 2011.2.20 yyagi
 				  {
 					int c = (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ja") ? 0 : 1;
@@ -2533,7 +2533,7 @@ for (int i = 0; i < 3; i++) {
 						st.plugin.On初期化(this.PluginHost);
 						st.plugin.OnManagedリソースの作成();
 						st.plugin.OnUnmanagedリソースの作成();
-						Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+						Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 					}
 					Trace.TraceInformation("All plugins have been initialized.");
 				} catch {
@@ -2648,7 +2648,7 @@ for (int i = 0; i < 3; i++) {
 							st.plugin.OnUnmanagedリソースの解放();
 							st.plugin.OnManagedリソースの解放();
 							st.plugin.On終了();
-							Directory.SetCurrentDirectory(OpenTaiko.strEXEのあるフォルダ);
+							Directory.SetCurrentDirectory(OpenTaiko.strEXEFolder);
 						}
 						PluginHost = null;
 						Trace.TraceInformation("All plugins have been terminated.");
@@ -2670,7 +2670,7 @@ for (int i = 0; i < 3; i++) {
 #pragma warning disable SYSLIB0011
 						if (EnumSongs.IsSongListEnumCompletelyDone) {
 							BinaryFormatter songlistdb_ = new BinaryFormatter();
-							using Stream songlistdb = File.OpenWrite($"{OpenTaiko.strEXEのあるフォルダ}songlist.db");
+							using Stream songlistdb = File.OpenWrite($"{OpenTaiko.strEXEFolder}songlist.db");
 							songlistdb_.Serialize(songlistdb, Songs管理.listSongsDB);
 						}
 #pragma warning restore SYSLIB0011
@@ -2815,14 +2815,14 @@ for (int i = 0; i < 3; i++) {
 				//---------------------
 				Trace.TraceInformation("Outputting Config.ini...");
 				Trace.TraceInformation("This only needs to be done once, unless you have deleted the file!");
-				string str = strEXEのあるフォルダ + "Config.ini";
+				string str = strEXEFolder + "Config.ini";
 				Trace.Indent();
 				try {
 					if (DTXVmode.Enabled) {
 						DTXVmode.tUpdateConfigIni();
 						Trace.TraceInformation("Configuration information for DTXV mode has been saved in Config.ini.");
 					} else {
-						ConfigIni.t書き出し(str);
+						ConfigIni.WriteToFile(str);
 						Trace.TraceInformation("Saved succesfully. ({0})", str);
 					}
 				} catch (Exception e) {
@@ -2874,7 +2874,7 @@ for (int i = 0; i < 3; i++) {
 			this.PluginList = new List<STPlugin>();
 
 			string PluginActivityName = typeof(IPluginActivity).FullName;
-			string PluginFolderPath = strEXEのあるフォルダ + "Plugins" + Path.DirectorySeparatorChar;
+			string PluginFolderPath = strEXEFolder + "Plugins" + Path.DirectorySeparatorChar;
 
 			this.SearchAndGeneratePluginsInFolder(PluginFolderPath, PluginActivityName);
 
