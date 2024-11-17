@@ -3,13 +3,16 @@
 ## [0.6.0.20] - 2024-11-16 (Beta)
 
 - [i18n] Changing Name Menu in Chinese and Russian
+- [i18n] Changing Name Menu in Chinese and Russian
 
 ## [0.6.0.19] - 2024-11-15 (Beta)
 
 - Allow users to change their name via. Heya menu
+- Allow users to change their name via. Heya menu
 
 ## [0.6.0.18] - 2024-11-15 (Beta)
 
+- Add Chinese and Russian Instrument Names
 - Add Chinese and Russian Instrument Names
 
 ## [0.6.0.17] - 2024-11-12 (Beta)
@@ -17,15 +20,23 @@
 - Make HitSounds.json per-folder instead of one central file
 - Initialize new JSON file if one does not exist in that folder, using folder name as Hitsound name
 - Add localization support for Hitsounds
+- Make HitSounds.json per-folder instead of one central file
+- Initialize new JSON file if one does not exist in that folder, using folder name as Hitsound name
+- Add localization support for Hitsounds
 
 ## [0.6.0.16] - 2024-11-04 (Beta)
 
+This reverts commit db426c96472fc086d7c91b89edde26371a13a407.
+- Readable error message on screen instead of crashes before the startup screen (Missing skin, no audio device found, etc)
+- Few code translation from japanese to english
+- Minor refactoring on the stage change code to avoid repetitions (OpenTaiko.cs)
 - Readable error message on screen instead of crashes before the startup screen (Missing skin, no audio device found, etc)
 - Few code translation from japanese to english
 - Minor refactoring on the stage change code to avoid repetitions (OpenTaiko.cs)
 
 ## [0.6.0.15] - 2024-11-02 (Beta)
 
+- Korean translation by AsPho
 - Korean translation by AsPho
 
 ## [0.6.0.14] - 2024-11-02 (Beta)
